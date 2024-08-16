@@ -1,23 +1,29 @@
 import { Fragment } from "react/jsx-runtime";
-import { MouseEvent } from "react";
+import {useState } from "react";
+interface Props{
+    name:string[];
+    heading:string;
 
-export function ListGroup() {
-    const a = ["Amin", "Jhon", "Jarvis", "Friday"]
+}
+
+export function ListGroup(props:Props) {
+    
+    const [selectedind,setselectedind]=useState(-1)
     //a=[]
     // const getmsg = ()=>{
     //     return a.length===0 ?<p>No Data Found</p>: null
 
     // }
     //writing function outtside of elements because of it's logics
-    const handle=(e:MouseEvent)=>{
-        console.log(e.currentTarget)
-    }
+    // const handle=(e:MouseEvent)=>{
+    //     console.log(e.currentTarget)
+    // }
 
 
-    return (<Fragment><h1>List Group</h1>
-        {a.length === 0 && <p>No Items Found At 38:29</p>}
+    return (<Fragment><h1>{props.heading}</h1>
+        {props.name.length === 0 && <p>No Items Found At 38:29</p>}
         <ul className="list-group">
-            {a.map(name => <li className="list-group-item" onClick={handle} key={name}>{name}</li>)}
+            {props.name.map((name,index) => <li className={selectedind==index ? "list-group-item active":"list-group-item"} key={name} onClick={() =>{setselectedind(index);} }>{name}</li>)}
         </ul></Fragment>);
 }
 

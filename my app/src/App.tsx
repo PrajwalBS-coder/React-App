@@ -1,6 +1,7 @@
 import {ListGroup} from "./components/listgroup"
 
 function App(){
-  return <div><ListGroup/></div>
+  const a = ["Amin", "Jhon", "Jarvis", "Friday"]
+  return <div><ListGroup name={a} heading="Names"/></div>
 }
 export default App
