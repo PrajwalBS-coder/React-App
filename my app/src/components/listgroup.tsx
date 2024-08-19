@@ -3,10 +3,11 @@ import {useState } from "react";
 interface Props{
     name:string[];
     heading:string;
+    onSelectItem:(item:string) => void
 
 }
 
-export function ListGroup({name,heading}:Props) {
+export function ListGroup({name,heading,onSelectItem}:Props) {
     
     const [selectedind,setselectedind]=useState(-1)
     //a=[]
@@ -23,7 +24,9 @@ export function ListGroup({name,heading}:Props) {
     return (<Fragment><h1>{heading}</h1>
         {name.length === 0 && <p>No Items Found At 38:29</p>}
         <ul className="list-group">
-            {name.map((name,index) => <li className={selectedind==index ? "list-group-item active":"list-group-item"} key={name} onClick={() =>{setselectedind(index);} }>{name}</li>)}
+            {name.map((name,index) => <li className={selectedind==index ? "list-group-item active":"list-group-item"} key={name} onClick={() =>{setselectedind(index);onSelectItem(name);} 
+                
+             }>{name}</li>)}
         </ul></Fragment>);
 }
 
