@@ -1,4 +1,5 @@
 import {ListGroup} from "./components/listgroup"
+import{Alert} from "./components/Alert"
 
 
 function App(){
@@ -6,6 +7,11 @@ function App(){
   const c=(a:string)=>{
     console.log(a)
   }
-  return <div><ListGroup name={a} heading="Names" onSelectItem={c} /></div>
+  return <div><ListGroup name={a} heading="Names" onSelectItem={c} />
+  <Alert>
+    Hello Namste<marquee>Welcome to India</marquee>
+    </Alert>
+  </div>
+  
 }
 export default App
