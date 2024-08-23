@@ -14,5 +14,3 @@ export const Alert = ({children}:Props) => {
     </div>
   )
 }
-
-//export default Alert

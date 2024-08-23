@@ -1,5 +1,6 @@
 import {ListGroup} from "./components/listgroup"
 import{Alert} from "./components/Alert"
+import{Button} from "./components/Button"
 
 
 function App(){
@@ -11,6 +12,8 @@ function App(){
   <Alert>
     Hello Namste<marquee>Welcome to India</marquee>
     </Alert>
+
+    <Button onClick={()=>{console.log('Clicked')}}>My Button</Button>
   </div>
   
 }
